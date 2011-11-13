@@ -1,5 +1,5 @@
 Stockquotesystem::Application.routes.draw do
-
+root :to => "stock#home"
 match '/stock/home',:controller=>'stock',:action=>'home'
 match '/stock/lookup',:controller=>'stock',:action=>'lookup'
 

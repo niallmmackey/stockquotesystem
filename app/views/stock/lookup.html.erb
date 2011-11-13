@@ -10,38 +10,39 @@
 </head>
 
 <body>
+<div id="content">
 
-<h1 align="center"><strong>Stock Market Search</strong></h1>
+	<h1 align="center"><strong>Stock Market Search</strong></h1>
 
-<%= form_tag({:controller => "stock", :action => "lookup"}, :method => "get") do %>
+	<%= form_tag({:controller => "stock", :action => "lookup"}, :method => "get") do %>
 
-<%= label_tag(:StockSymbol, "Please Enter Stock Symbol:") %>
-<%= text_field_tag(:StockSymbol,'',:size => 4) %><span>(must be a maximum of 4 characters long)</span>
-<br/>
-<%= label_tag(:SMSnumber, "Please Enter Mobile Phone Number To Send Result To :") %>
-<%= text_field_tag(:SMSnumber) %><span>(e.g. +353872530705)</span>
-<br/>
+		<%= label_tag(:Symbol, "Please Enter Stock Symbol:") %>
+		<%= text_field_tag(:Symbol,'',:size => 4) %><span>(must be a maximum of 4 characters long)</span>
+		<br/>
+		<%= label_tag(:SMSno, "Please Enter Mobile Phone Number To Send Result To :") %>
+		<%= text_field_tag(:SMSno) %><span>(e.g. +353872530705)</span>
+		<br/>
 
-<p align="center">(leave mobile phone number blank if you don't need this functionality)</p>
+		<p align="center">(leave mobile phone number blank if you don't need this functionality)</p>
 
-<%= submit_tag("Find Stock") %>
+		<%= submit_tag("Find Stock") %>
 
-<% end %>
+	<% end %>
 
-<table border="1" cellspacing="10" cellpadding="3">
+	<table border="1" cellspacing="10" cellpadding="3">
 
-<tr>
-	<td>Stock Name</td>
-	<td>Ask Price</td>
-	<td>Bid Price</td>
-</tr>
-<tr>
-	<td><%= @Stocks["Name"] %></td>
-	<td><%= @Stocks["Ask"] %></td>
-	<td><%= @Stocks["Bid"] %></td>
-</tr>
-</table>
-
+		<tr>
+			<td>Stock Name</td>
+			<td>Ask Price</td>
+			<td>Bid Price</td>
+		</tr>
+		<tr>
+			<td><%= @Stocks["Name"] %></td>
+			<td><%= @Stocks["Ask"] %></td>
+			<td><%= @Stocks["Bid"] %></td>
+		</tr>
+	</table>
+</div>
 </body>
 
 </html>
